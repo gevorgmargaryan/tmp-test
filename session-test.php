@@ -24,3 +24,10 @@ $_SESSION['visit']++;
 // echo 'Client IP: '.$_SERVER['REMOTE_ADDR'] . '\n';
 
 print_r($_COOKIE);
+print_r($_SESSION);
+session_write_close();
+echo "\n>>>trying with config endpoint\n";
+ini_set('session.save_path', $conf_endpoint);
+
+ession_start();
+print_r($_SESSION);
