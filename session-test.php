@@ -29,5 +29,5 @@ session_write_close();
 echo "\n>>>trying with config endpoint\n";
 ini_set('session.save_path', $conf_endpoint);
 
-ession_start();
+session_start();
 print_r($_SESSION);
