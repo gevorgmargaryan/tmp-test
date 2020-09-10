@@ -20,7 +20,7 @@ if (!isset($_SESSION['visit'])) {
 
 $_SESSION['visit']++;
 
-echo 'Server IP: '.$_SERVER['SERVER_ADDR'] . '\n';
-echo 'Client IP: '.$_SERVER['REMOTE_ADDR'] . '\n';
+// echo 'Server IP: '.$_SERVER['SERVER_ADDR'] . '\n';
+// echo 'Client IP: '.$_SERVER['REMOTE_ADDR'] . '\n';
 
 print_r($_COOKIE);
