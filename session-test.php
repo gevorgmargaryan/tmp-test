@@ -1,13 +1,7 @@
 <?php 
 
-$conf_endpoint="dev02-tms-session-storage.tdm0gd.cfg.euc1.cache.amazonaws.com:11211";
-$node_endpoint="dev02-tms-session-storage.tdm0gd.0001.euc1.cache.amazonaws.com:11211";
-
 ini_set('session.save_handler', 'memcached');
-ini_set('session.save_path', $node_endpoint);
-
-ini_set('memcache.allow_failover',1);
-ini_set('memcache.session_redundancy', 2);
+ini_set('session.save_path', $_GET['save_path']);
 
 header('Content-Type: text/plain');
 
@@ -20,17 +14,4 @@ if (!isset($_SESSION['visit'])) {
 
 $_SESSION['visit']++;
 
-// echo 'Server IP: '.$_SERVER['SERVER_ADDR'] . '\n';
-// echo 'Client IP: '.$_SERVER['REMOTE_ADDR'] . '\n';
-
-print_r($_COOKIE);
-
-echo "\n>>> node setup";
-print_r($_SESSION);
-session_write_close();
-
-echo "\n>>> trying with config endpoint\n";
-ini_set('session.save_path', $conf_endpoint);
-
-session_start();
 print_r($_SESSION);
