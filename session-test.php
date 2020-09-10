@@ -1,7 +1,11 @@
 <?php 
 
-ini_set('session.save_handler', 'memcache');
-ini_set('session.save_path', 'tcp://memcached-test:11211');
+$conf_endpoint="dev02-tms-session-storage.tdm0gd.cfg.euc1.cache.amazonaws.com:11211";
+$node_endpoint="dev02-tms-session-storage.tdm0gd.0001.euc1.cache.amazonaws.com:112112";
+
+ini_set('session.save_handler', 'memcached');
+ini_set('session.save_path', $node_endpoint);
+
 ini_set('memcache.allow_failover',1);
 ini_set('memcache.session_redundancy', 4);
 
