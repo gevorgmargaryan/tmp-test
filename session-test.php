@@ -1,7 +1,7 @@
 <?php 
 
 $conf_endpoint="dev02-tms-session-storage.tdm0gd.cfg.euc1.cache.amazonaws.com:11211";
-$node_endpoint="dev02-tms-session-storage.tdm0gd.0001.euc1.cache.amazonaws.com:112112";
+$node_endpoint="dev02-tms-session-storage.tdm0gd.0001.euc1.cache.amazonaws.com:11211";
 
 ini_set('session.save_handler', 'memcached');
 ini_set('session.save_path', $node_endpoint);
